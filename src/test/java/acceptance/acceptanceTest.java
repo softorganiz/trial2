@@ -6,7 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 import io.cucumber.junit.CucumberOptions.SnippetType;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="cases", plugin= {"html:target/cucumber/report.html"},monochrome=true,snippets=SnippetType.CAMELCASE,glue={"acceptance"})
+@CucumberOptions(features="src/main/resources/cases", plugin= {"html:target/cucumber/report.html"},monochrome=true,snippets=SnippetType.CAMELCASE,glue={"acceptance"})
  
 public class acceptanceTest {
 

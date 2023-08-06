@@ -35,3 +35,4 @@ Scenario: Add multiple houses to the waiting list.
 Given The owner wants to add multiple houses to the waiting list.
 When The owner provides the information for each house (unique IDs, locations, number of floors, bedrooms, bathrooms, monthly rent, etc.).
 Then Each new house is successfully added to the waiting list, and the waiting list contains all the new houses.
+#final

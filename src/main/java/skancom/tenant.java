@@ -1,11 +1,11 @@
 package skancom;
-public class Tenant extends Person{
+public class tenant extends Person{
 	private String age;
 	private String major;
 
 	private String contactInfo;
 	
-	public Tenant(String name,String age, String major,String contactInfo) {
+	public tenant(String name,String age, String major,String contactInfo) {
 		super();
 		this.setName(name);
 		this.age=age;
@@ -13,7 +13,7 @@ public class Tenant extends Person{
 		this.contactInfo=contactInfo;
 	}
 
-	public Tenant()
+	public tenant()
 	{
 		super();
 		this.setType("tenant");
@@ -44,9 +44,9 @@ public class Tenant extends Person{
 	}
 	public static int findByName(String name) {
 		int s=0;
-		for(int i=0;i<Main.tenants.size();i++)
+		for(int i=0;i<main.tenants.size();i++)
 		{
-			if(Main.tenants.get(i).getName().equals(name))
+			if(main.tenants.get(i).getName().equals(name))
 				 s=i;
 		}
 		return s;

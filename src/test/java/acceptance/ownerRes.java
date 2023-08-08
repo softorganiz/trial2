@@ -2,18 +2,12 @@ package acceptance;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import skancom.House;
-import skancom.Person;
-import skancom.main;
 import skancom.tenant;
 
 public class ownerRes {

@@ -27,10 +27,10 @@ public class MainFunc {
 		String stat;/*type*/
 		Logger logger = Logger.getLogger(MainFunc.class.getSimpleName());
 		
-		Main.setPersons();
-		Main.setHouse();
-		Main.setOwner();
-		Main.setTenant();
+		main.setPersons();
+		main.setHouse();
+		main.setOwner();
+		main.setTenant();
 
 		logger.log(Level.SEVERE, () ->"\n");
 
@@ -47,14 +47,14 @@ public class MainFunc {
 			logger.log(Level.SEVERE, () ->"|\t\t\t\t\t\t\t\t\t\t\t\tEnter your password\t\t\t\t\t\t\t\t\t\t\t\t\t|");
 			password = input.nextLine();
 		   
-			stat = Admin.login(name, password,Main.persons);
+			stat = Admin.login(name, password,main.persons);
 			if (stat.equals("false")) {
 				logged = 0;
 				logger.log(Level.SEVERE, () ->"|\t\t\t\t\t\t\t\t\t\t\t\tLogin faild\t\t\t\t\t\t\t\t\t\t\t\t|");
 
 			} else {
 				logged = 1;
-				user = Main.persons.get(Person.getIndex(name, Main.persons));
+				user = main.persons.get(Person.getIndex(name, main.persons));
 				
 				logger.log(Level.SEVERE, () ->
 						"|______________________________________________________________________________________________________________________________|");
@@ -116,7 +116,7 @@ public class MainFunc {
 					
 					else if (x == 2 || x == 3) {
 						List <House> testt;
-						if (x== 2) {testt = Main.Houses;}  
+						if (x== 2) {testt = main.Houses;}  
 						else {testt = House.Waitinghouses;}
 						logger.log(Level.SEVERE, () ->"|\t\t\t\t\t\t\t\t\t press 1. To update the photo \t\t\t\t\t\t\t\t\t\t\t\t\t|");
 						logger.log(Level.SEVERE, () ->"|\t\t\t\t\t\t\t\t\t       2. To update the location \t\t\t\t\t\t\t\t\t\t\t\t\t|");
@@ -219,22 +219,22 @@ public class MainFunc {
 						
 						if (x == 4) {
 
-						House.printHousesByOwner(name,Main.Houses);}  
+						House.printHousesByOwner(name,main.Houses);}  
 						else if (x ==5 ) { 
 							House.printHousesByOwner(name,House.Waitinghouses);
 							}
 						}
 				
 					else if(x == 6){
-						for (int i = 0; i < Main.Houses.size(); i++) {
-						    if (Main.Houses.get(i).getTenant() != null && Main.Houses.get(i).getOwner().equals(name)) {
+						for (int i = 0; i < main.Houses.size(); i++) {
+						    if (main.Houses.get(i).getTenant() != null && main.Houses.get(i).getOwner().equals(name)) {
 						    	String logMessage = String.format(
-						                "\t\t\t\t\t\t\t\t\tId: %s, Location: %s, Monthly rent: %s, Services: %s, Tenant: %s",
-						                Main.Houses.get(i).getId(),
-						                Main.Houses.get(i).getLocation(),
-						                Main.Houses.get(i).getMonthlyRent(),
-						                Main.Houses.get(i).getServices(),
-						                Main.Houses.get(i).getTenant()
+						                "\t\t\t\t\t\t\t\t\tId: %s, Location: %s, Monthly rent: %s, Services: %s, tenant: %s",
+						                main.Houses.get(i).getId(),
+						                main.Houses.get(i).getLocation(),
+						                main.Houses.get(i).getMonthlyRent(),
+						                main.Houses.get(i).getServices(),
+						                main.Houses.get(i).getTenant()
 						            );
 						            logger.log(Level.INFO, logMessage);
 						    }
@@ -250,7 +250,7 @@ public class MainFunc {
 						}	
 					
 				}}
-			if (stat.equalsIgnoreCase("Tenant")) {
+			if (stat.equalsIgnoreCase("tenant")) {
 				while (logged == 1) {
 					logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\tTo see the available housing enter 1");
 					logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\tIo advertise your own used furniture for sale enter2");
@@ -258,25 +258,25 @@ public class MainFunc {
 					
 					x = input.nextInt();
 					if (x == 1) {
-						for(int i=0;i<Main.Houses.size();i++) {
-						if(Main.Houses.get(i).getTenant()==null)
+						for(int i=0;i<main.Houses.size();i++) {
+						if(main.Houses.get(i).getTenant()==null)
 						{
-							  String message = String.format("House %s ", Main.Houses.get(i).getId());
+							  String message = String.format("House %s ", main.Houses.get(i).getId());
 						        logger.log(Level.SEVERE, message);
 							
 						}}
 						
 						logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\tenter the House id to show more information");
 						id=input.next();
-						for(int i=0;i<Main.Houses.size();i++) {
-							if(Main.Houses.get(i).getId().equals(id)) {
-							     String photoMessage = "\t\t\t\t\t\t\t\t\t Photo: " + Main.Houses.get(i).getPhoto();
-							        String locationMessage = "\t\t\t\t\t\t\t\t\t Location: " + Main.Houses.get(i).getLocation();
-							        String monthlyRentMessage = "\t\t\t\t\t\t\t\t\t Monthly rent: " + Main.Houses.get(i).getMonthlyRent();
-							        String servicesMessage = "\t\t\t\t\t\t\t\t\t Services: " + Main.Houses.get(i).getServices();
-							        String bedroomsMessage = "\t\t\t\t\t\t\t\t\t Bedrooms number: " + Main.Houses.get(i).getnumbedrooms();
-							        String floorsMessage = "\t\t\t\t\t\t\t\t\t Floors: " + Main.Houses.get(i).getnumfloors();
-							        String bathroomsMessage = "\t\t\t\t\t\t\t\t\t Bathrooms: " + Main.Houses.get(i).getnumbathrooms();
+						for(int i=0;i<main.Houses.size();i++) {
+							if(main.Houses.get(i).getId().equals(id)) {
+							     String photoMessage = "\t\t\t\t\t\t\t\t\t Photo: " + main.Houses.get(i).getPhoto();
+							        String locationMessage = "\t\t\t\t\t\t\t\t\t Location: " + main.Houses.get(i).getLocation();
+							        String monthlyRentMessage = "\t\t\t\t\t\t\t\t\t Monthly rent: " + main.Houses.get(i).getMonthlyRent();
+							        String servicesMessage = "\t\t\t\t\t\t\t\t\t Services: " + main.Houses.get(i).getServices();
+							        String bedroomsMessage = "\t\t\t\t\t\t\t\t\t Bedrooms number: " + main.Houses.get(i).getnumbedrooms();
+							        String floorsMessage = "\t\t\t\t\t\t\t\t\t Floors: " + main.Houses.get(i).getnumfloors();
+							        String bathroomsMessage = "\t\t\t\t\t\t\t\t\t Bathrooms: " + main.Houses.get(i).getnumbathrooms();
 
 							        logger.log(Level.INFO, () -> photoMessage);
 							        logger.log(Level.INFO, () -> locationMessage);
@@ -291,16 +291,16 @@ public class MainFunc {
 							y=input.nextInt();
 							if(y==1)
 							{
-							Main.Houses.get(i).setTenant(name);
+							main.Houses.get(i).setTenant(name);
 							logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\tyou booked the house successfully");
-							for(int j=0;j<Main.tenants.size();j++) {
-								if(Main.tenants.get(j).getName().equals(name))	{
+							for(int j=0;j<main.tenants.size();j++) {
+								if(main.tenants.get(j).getName().equals(name))	{
 								
 								     String tenantInfo = String.format(
 								             "\t\t\t\t\t\t\t\t\tyour name is: %s, your age is: %s, your major is: %s",
-								             Main.tenants.get(j).getName(),
-								             Main.tenants.get(j).getAge(),
-								             Main.tenants.get(j).getMajor()
+								             main.tenants.get(j).getName(),
+								             main.tenants.get(j).getAge(),
+								             main.tenants.get(j).getMajor()
 								         );
 								         logger.log(Level.INFO, tenantInfo);
 								
@@ -309,18 +309,18 @@ public class MainFunc {
 							
 								
 							
-							for(int s=0;s<Main.Houses.size();s++) {
-								if(Main.Houses.get(s).getTenant().equals(name)) {
-									String paidTimeMessage = String.format("\t\t\t\t\t\t\t\t\tpaid time: %s", Main.Houses.get(s).getPaidTime());
+							for(int s=0;s<main.Houses.size();s++) {
+								if(main.Houses.get(s).getTenant().equals(name)) {
+									String paidTimeMessage = String.format("\t\t\t\t\t\t\t\t\tpaid time: %s", main.Houses.get(s).getPaidTime());
 							        logger.log(Level.INFO, paidTimeMessage);
 								}
 							}
-							for(int t=0;t<Main.Houses.size();t++) {
-								if(Main.Houses.get(t).getId().equals(id)) {
+							for(int t=0;t<main.Houses.size();t++) {
+								if(main.Houses.get(t).getId().equals(id)) {
 									  String ownerInfo = String.format(
 									            "\t\t\t\t\t\t\t\ttthe owner name is: %s, the owner Phone number is: %s",
-									            Main.Houses.get(t).getOwner(),
-									            Main.owners.get(Tenant.findByName(Main.Houses.get(t).getOwner())).getContactInfo()
+									            main.Houses.get(t).getOwner(),
+									            main.owners.get(tenant.findByName(main.Houses.get(t).getOwner())).getContactInfo()
 									        );
 									        logger.log(Level.INFO, ownerInfo);
 								}
@@ -342,7 +342,7 @@ public class MainFunc {
 						logger.log(Level.SEVERE, () ->"enter the price");
 						String price=input.next();
 						Furniture f=new Furniture(desc,price,name);
-						Main.furnit.add(f);
+						main.furnit.add(f);
 						logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t you advertise your own used furniture for sale successfully");
 					}
 					else if(x==0) {
@@ -366,19 +366,19 @@ public class MainFunc {
 					x = input.nextInt();
 					
 					if(x==1) {
-						 for (int i = 0; i < Main.Houses.size(); i++) {
-						        if (Main.Houses.get(i).getTenant() != null) {
+						 for (int i = 0; i < main.Houses.size(); i++) {
+						        if (main.Houses.get(i).getTenant() != null) {
 						        	 String houseInfo = String.format(
 						        	            "\t\t\t\t\t\t\t\t\tId: %s\n" +
 						        	            "\t\t\t\t\t\t\t\t\tLocation: %s\n" +
 						        	            "\t\t\t\t\t\t\t\t\tMonthly rent: %s\n" +
 						        	            "\t\t\t\t\t\t\t\t\tServices: %s\n" +
 						        	            "\t\t\t\t\t\t\t\t\tTenant: %s",
-						        	            Main.Houses.get(i).getId(),
-						        	            Main.Houses.get(i).getLocation(),
-						        	            Main.Houses.get(i).getMonthlyRent(),
-						        	            Main.Houses.get(i).getServices(),
-						        	            Main.Houses.get(i).getTenant()
+						        	            main.Houses.get(i).getId(),
+						        	            main.Houses.get(i).getLocation(),
+						        	            main.Houses.get(i).getMonthlyRent(),
+						        	            main.Houses.get(i).getServices(),
+						        	            main.Houses.get(i).getTenant()
 						        	        );
 						        	        logger.log(Level.INFO, houseInfo);
 						        }
@@ -403,7 +403,7 @@ public class MainFunc {
 					logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t if you want to accept click 1, to reject click 2");
 					r = input.nextInt();
 					if (r== 1) {
-						 House.transferHouse(idad, House.Waitinghouses, Main.Houses);
+						 House.transferHouse(idad, House.Waitinghouses, main.Houses);
 						
 					}else {
 						logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t House is rejected !!");

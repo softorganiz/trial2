@@ -23,7 +23,7 @@ public class Main{
     Person admin=new Person("admin","Iamadmin","admin");
 	Person owner1=new Person("sema","sema123","owner");
 	Person owner2=new Person("ahmad","ahmad123","owner");
-	Person tenant1=new Person("muna","muna123","tenant");
+	Person tenant1=new Person("muna","muna123","Tenant");
 	persons.add(admin);
 	persons.add(owner1);
 	persons.add(tenant1 );

@@ -250,7 +250,7 @@ public class MainFunc {
 						}	
 					
 				}}
-			if (stat.equalsIgnoreCase("tenant")) {
+			if (stat.equalsIgnoreCase("Tenant")) {
 				while (logged == 1) {
 					logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\tTo see the available housing enter 1");
 					logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\tIo advertise your own used furniture for sale enter2");

@@ -42,8 +42,8 @@ public class Admin extends Person {
 
 					return TYPEADMIN;
 				}
-				if (persons.get(i).getType().equalsIgnoreCase("tenant")) {
-					return "tenant";
+				if (persons.get(i).getType().equalsIgnoreCase("Tenant")) {
+					return "Tenant";
 				}
 				if (persons.get(i).getType().equalsIgnoreCase("owner")) {
 					return "owner";

@@ -16,7 +16,7 @@ public class Tenant extends Person{
 	public Tenant()
 	{
 		super();
-		this.setType("tenant");
+		this.setType("Tenant");
 	}
 
 	public String getMajor() {

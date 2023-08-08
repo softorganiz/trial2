@@ -27,7 +27,7 @@ public class House {
 	private String contactinfo;
 	protected static final List<House> Waitinghouses = new ArrayList<>();
 	
-	static Logger loger = Logger.getLogger(House.class.getSimpleName());
+	private static final Logger loger = Logger.getLogger(House.class.getSimpleName());
 	public House()
 	{
 		this.idhouse=String.valueOf(++currentId);
@@ -300,11 +300,11 @@ public class House {
 			
 			public static void printHousesByOwner(String ownerName, List<House> houseList) {
 		        boolean foundOwner = false;
+		        Logger loger = Logger.getLogger(House.class.getSimpleName());
 
 		        for (House house : houseList) {
 		            if (house != null && house.getOwner().equals(ownerName)) {
 		                foundOwner = true;
-		                Logger loger = Logger.getLogger(House.class.getSimpleName());
 		                loger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\t House Attributes for Owner: %s " , ownerName));
 	                    loger.log(Level.INFO, String.format( "\t\t\t\t\t\t\t\t\t ID: %s" , house.getId()));
 
@@ -317,8 +317,7 @@ public class House {
 		        }
 
 		        if (!foundOwner) {
-		            Logger logger = Logger.getLogger(House.class.getSimpleName());
-		            logger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\t No houses found for owner:%s " , ownerName));
+		            loger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\t No houses found for owner:%s " , ownerName));
 		        }
 		    }
 

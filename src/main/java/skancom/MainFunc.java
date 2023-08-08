@@ -17,7 +17,7 @@ public class MainFunc {
 		int y;
 		String in;
 		String dup="\t\t\t\t\t\t\t\t\t No house with this id";
-		
+		String what ="\t\t\t\t\t\t\t\t\t What house id do you want to update";
 		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
 		String id;
@@ -127,7 +127,7 @@ public class MainFunc {
 						x = input.nextInt();
 					
 						if (x == 1) {
-								logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t What house id do you want to update");
+								logger.log(Level.SEVERE, () ->what);
 						
 						
 							idd = input.nextLine();
@@ -144,7 +144,7 @@ public class MainFunc {
 						}
 						else if(x == 2) {
 							
-							logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t What house id do you want to update");
+							logger.log(Level.SEVERE, () ->what);
 						idd = input.nextLine();
 					
 
@@ -161,7 +161,7 @@ public class MainFunc {
 					}
 						else if(x == 3) {
 							
-							logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t What house id do you want to update");
+							logger.log(Level.SEVERE, () ->what);
 						idd = input.nextLine();
 					
 					
@@ -178,7 +178,7 @@ public class MainFunc {
 					}
                         else if(x == 4) {
 							
-							logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t What house id do you want to update");
+							logger.log(Level.SEVERE, () ->what);
 						idd = input.nextLine();	
 					
 
@@ -196,7 +196,7 @@ public class MainFunc {
 						
                         else if(x == 5) {
 							
-							logger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t What house id do you want to update");
+							logger.log(Level.SEVERE, () -> what);
 						idd = input.nextLine();	
 					
 
@@ -228,11 +228,15 @@ public class MainFunc {
 					else if(x == 6){
 						for (int i = 0; i < main.Houses.size(); i++) {
 						    if (main.Houses.get(i).getTenant() != null && main.Houses.get(i).getOwner().equals(name)) {
-						        logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\tId: %s " , main.Houses.get(i).getId());
-						        logger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\tLocation: %s", main.Houses.get(i).getLocation()));
-						        logger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\tMonthly rent: %s", main.Houses.get(i).getMonthlyRent()));
-						        logger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\tServices: %s", main.Houses.get(i).getServices()));
-						        logger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\tTenant: %s", main.Houses.get(i).getTenant()));
+						    	String logMessage = String.format(
+						                "\t\t\t\t\t\t\t\t\tId: %s, Location: %s, Monthly rent: %s, Services: %s, Tenant: %s",
+						                main.Houses.get(i).getId(),
+						                main.Houses.get(i).getLocation(),
+						                main.Houses.get(i).getMonthlyRent(),
+						                main.Houses.get(i).getServices(),
+						                main.Houses.get(i).getTenant()
+						            );
+						            logger.log(Level.INFO, logMessage);
 						    }
 						}
 
@@ -257,7 +261,7 @@ public class MainFunc {
 						for(int i=0;i<main.Houses.size();i++) {
 						if(main.Houses.get(i).getTenant()==null)
 						{
-							logger.log(Level.SEVERE,"House "+ main.Houses.get(i).getId());
+							logger.log(Level.SEVERE,String.format("House %s ", main.Houses.get(i).getId()));
 							
 						}}
 						
@@ -265,13 +269,21 @@ public class MainFunc {
 						id=input.next();
 						for(int i=0;i<main.Houses.size();i++) {
 							if(main.Houses.get(i).getId().equals(id)) {
-								logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\t Photo: " + main.Houses.get(i).getPhoto());
-								logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\t Location: " + main.Houses.get(i).getLocation());
-								logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\t Monthly rent: " + main.Houses.get(i).getMonthlyRent());
-								logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\t Services: " + main.Houses.get(i).getServices());
-								logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\t Bedrooms number: " + main.Houses.get(i).getnumbedrooms());
-								logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\t Floors : " + main.Houses.get(i).getnumfloors());
-								logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\t bathrooms: " +main.Houses.get(i).getnumbathrooms());
+							     String photoMessage = "\t\t\t\t\t\t\t\t\t Photo: " + main.Houses.get(i).getPhoto();
+							        String locationMessage = "\t\t\t\t\t\t\t\t\t Location: " + main.Houses.get(i).getLocation();
+							        String monthlyRentMessage = "\t\t\t\t\t\t\t\t\t Monthly rent: " + main.Houses.get(i).getMonthlyRent();
+							        String servicesMessage = "\t\t\t\t\t\t\t\t\t Services: " + main.Houses.get(i).getServices();
+							        String bedroomsMessage = "\t\t\t\t\t\t\t\t\t Bedrooms number: " + main.Houses.get(i).getnumbedrooms();
+							        String floorsMessage = "\t\t\t\t\t\t\t\t\t Floors: " + main.Houses.get(i).getnumfloors();
+							        String bathroomsMessage = "\t\t\t\t\t\t\t\t\t Bathrooms: " + main.Houses.get(i).getnumbathrooms();
+
+							        logger.log(Level.INFO, () -> photoMessage);
+							        logger.log(Level.INFO, () -> locationMessage);
+							        logger.log(Level.INFO, () -> monthlyRentMessage);
+							        logger.log(Level.INFO, () -> servicesMessage);
+							        logger.log(Level.INFO, () -> bedroomsMessage);
+							        logger.log(Level.INFO, () -> floorsMessage);
+							        logger.log(Level.INFO, () -> bathroomsMessage);
 							
 							logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\tTo book this house enter 1");
 							logger.log(Level.SEVERE, () ->"t\t\t\t\t\t\t\t\t\tTo go back inter 2");
@@ -283,9 +295,13 @@ public class MainFunc {
 							for(int j=0;j<main.tenants.size();j++) {
 								if(main.tenants.get(j).getName().equals(name))	{
 								
-									logger.log(Level.INFO,String.format("\t\t\t\t\t\t\t\t\tyour name is:%s ",main.tenants.get(j).getName()));
-									logger.log(Level.INFO,String.format("\t\t\t\t\t\t\t\t\tyour age is: %s " ,main.tenants.get(j).getAge()));
-									logger.log(Level.INFO,String.format("\t\t\t\t\t\t\t\t\tyour major is: %s ",main.tenants.get(j).getMajor()));
+								     String tenantInfo = String.format(
+								             "\t\t\t\t\t\t\t\t\tyour name is: %s, your age is: %s, your major is: %s",
+								             main.tenants.get(j).getName(),
+								             main.tenants.get(j).getAge(),
+								             main.tenants.get(j).getMajor()
+								         );
+								         logger.log(Level.INFO, tenantInfo);
 								
 								}
 							}
@@ -299,9 +315,12 @@ public class MainFunc {
 							}
 							for(int t=0;t<main.Houses.size();t++) {
 								if(main.Houses.get(t).getId().equals(id)) {
-									logger.log(Level.INFO,"\t\t\t\t\t\t\t\ttthe owner name is:  "+main.Houses.get(t).getOwner());
-									int s=tenant.findByName(main.Houses.get(t).getOwner());
-									logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\tthe owner Phone number is:  " +main.owners.get(s).getContactInfo());
+									  String ownerInfo = String.format(
+									            "\t\t\t\t\t\t\t\ttthe owner name is: %s, the owner Phone number is: %s",
+									            main.Houses.get(t).getOwner(),
+									            main.owners.get(tenant.findByName(main.Houses.get(t).getOwner())).getContactInfo()
+									        );
+									        logger.log(Level.INFO, ownerInfo);
 								}
 									
 								}
@@ -347,11 +366,19 @@ public class MainFunc {
 					if(x==1) {
 						 for (int i = 0; i < main.Houses.size(); i++) {
 						        if (main.Houses.get(i).getTenant() != null) {
-						            logger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\tId: %s " , main.Houses.get(i).getId()));
-						            logger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\tLocation: %s", main.Houses.get(i).getLocation()));
-						            logger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\tMonthly rent: %s", main.Houses.get(i).getMonthlyRent()));
-						            logger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\tServices: %s", main.Houses.get(i).getServices()));
-						            logger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\tTenant: %s", main.Houses.get(i).getTenant()));
+						        	 String houseInfo = String.format(
+						        	            "\t\t\t\t\t\t\t\t\tId: %s\n" +
+						        	            "\t\t\t\t\t\t\t\t\tLocation: %s\n" +
+						        	            "\t\t\t\t\t\t\t\t\tMonthly rent: %s\n" +
+						        	            "\t\t\t\t\t\t\t\t\tServices: %s\n" +
+						        	            "\t\t\t\t\t\t\t\t\tTenant: %s",
+						        	            main.Houses.get(i).getId(),
+						        	            main.Houses.get(i).getLocation(),
+						        	            main.Houses.get(i).getMonthlyRent(),
+						        	            main.Houses.get(i).getServices(),
+						        	            main.Houses.get(i).getTenant()
+						        	        );
+						        	        logger.log(Level.INFO, houseInfo);
 						        }
 						    }
 					}

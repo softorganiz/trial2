@@ -2,7 +2,7 @@ package skancom;
 
 import java.util.Scanner;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import java.util.logging.Level;
@@ -16,7 +16,7 @@ public class MainFunc {
 		int x;
 		int y;
 		String in;
-		
+		String dup="\t\t\t\t\t\t\t\t\t No house with this id";
 		
 		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
@@ -35,7 +35,7 @@ public class MainFunc {
 		logger.log(Level.SEVERE, () ->"\n");
 
 		logger.log(Level.SEVERE, () ->"|\t\t\t\t\t\t\t\t\t\t\t\t\tWelcome to  skancom foundation\t\t\t\t\t\t\t\t\t\t\t\t|");
-		logger.log(Level.INFO,String.format("\n"));
+		logger.log(Level.INFO,"\n");
 
 		while (logged == 0) {
 			logger.log(Level.SEVERE, () ->""); 
@@ -115,7 +115,7 @@ public class MainFunc {
 					}
 					
 					else if (x == 2 || x == 3) {
-						List <House> testt = new ArrayList<>();
+						List <House> testt;
 						if (x== 2) {testt = main.Houses;}  
 						else {testt = House.Waitinghouses;}
 						logger.log(Level.SEVERE, () ->"|\t\t\t\t\t\t\t\t\t press 1. To update the photo \t\t\t\t\t\t\t\t\t\t\t\t\t|");
@@ -123,73 +123,73 @@ public class MainFunc {
 						logger.log(Level.SEVERE, () ->"|\t\t\t\t\t\t\t\t\t       3. To update the available services \t\t\t\t\t\t\t\t\t\t\t\t\t|");
 						logger.log(Level.SEVERE, () ->"|\t\t\t\t\t\t\t\t\t       4. To update the monthlyrent \t\t\t\t\t\t\t\t\t\t\t\t\t|");
 						logger.log(Level.SEVERE, () ->"|\t\t\t\t\t\t\t\t\t       5. To update the contact information \t\t\t\t\t\t\t\t\t\t\t\t\t|");
-						String Id;
+						String idd;
 						x = input.nextInt();
-						
+					
 						if (x == 1) {
 								logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t What house id do you want to update");
 						
 						
-							Id = input.nextLine();
-							if (!House.checkIsExist1(Id, testt)) {
-							logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t No house with this id");
+							idd = input.nextLine();
+							if (!House.checkIsExist1(idd, testt)) {
+							logger.log(Level.SEVERE, () -> dup);
 							logger.log(Level.SEVERE, () ->"\n");
 							logger.log(Level.SEVERE, () ->"\n");
 						} else {
 								logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t new photo: ");
 								in = input.nextLine();
-								House.updatePhoto(Id, in,testt );
+								House.updatePhoto(idd, in,testt );
 								logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t Update photo successfully");
 							}
 						}
 						else if(x == 2) {
 							
 							logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t What house id do you want to update");
-						Id = input.nextLine();
+						idd = input.nextLine();
 					
 
-						if (!House.isExistHouse(Id,testt)) {
-						logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t No house with this id");
+						if (!House.isExistHouse(idd,testt)) {
+						logger.log(Level.SEVERE, () ->dup);
 						logger.log(Level.SEVERE, () ->"\n");
 						logger.log(Level.SEVERE, () ->"\n");
 					} else {
 							logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t new location: ");
 							in = input.nextLine();
-							House.updateloc(Id,in, testt);
+							House.updateloc(idd,in, testt);
 							logger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t Update Location successfully");
 						}
 					}
 						else if(x == 3) {
 							
 							logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t What house id do you want to update");
-						Id = input.nextLine();
+						idd = input.nextLine();
 					
 					
-						if (!House.isExistHouse(Id, testt)) {
-							logger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t No house with this id");
+						if (!House.isExistHouse(idd, testt)) {
+							logger.log(Level.SEVERE, () ->dup);
 						logger.log(Level.SEVERE, () ->"\n");
 						logger.log(Level.SEVERE, () ->"\n");
 					} else {
 							logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t new available services: ");
 							in = input.nextLine();
-							House.updateservices(Id, in, testt);
+							House.updateservices(idd, in, testt);
 							logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t Update services successfully");
 						}
 					}
                         else if(x == 4) {
 							
 							logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t What house id do you want to update");
-						Id = input.nextLine();	
+						idd = input.nextLine();	
 					
 
-						if (!House.isExistHouse(Id, testt)) {
-							logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t No house with this id");
+						if (!House.isExistHouse(idd, testt)) {
+							logger.log(Level.SEVERE, () ->dup);
 						logger.log(Level.INFO, "\n");
 						logger.log(Level.INFO, "\n");
 					} else {
 							logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t new monthlyrent: ");
 							in = input.nextLine();
-							House.updaterent(Id, in, testt);
+							House.updaterent(idd, in, testt);
 							logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t Update monthlyrent successfully");
 						}
 					}
@@ -197,17 +197,17 @@ public class MainFunc {
                         else if(x == 5) {
 							
 							logger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t What house id do you want to update");
-						Id = input.nextLine();	
+						idd = input.nextLine();	
 					
 
-						if (!House.isExistHouse(Id, testt)) {
-							logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t No house with this id");
+						if (!House.isExistHouse(idd, testt)) {
+							logger.log(Level.SEVERE, () ->dup);
 						logger.log(Level.SEVERE, () ->"\n");
 						logger.log(Level.SEVERE, () ->"\n");
 					} else {
 							logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t new contact info: ");
 							in = input.nextLine();
-							House.updatecontactinfo(Id, in, testt);
+							House.updatecontactinfo(idd, in, testt);
 							logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t Update contact info successfully");
 						}
 					}
@@ -226,16 +226,16 @@ public class MainFunc {
 						}
 				
 					else if(x == 6){
-						for(int i=0;i<main.Houses.size();i++) {
-							if(main.Houses.get(i).getTenant()!=null&&main.Houses.get(i).getOwner().equals(name))
-							{
-								logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\tId:"+main.Houses.get(i).getId());
-								logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\tLocation:"+main.Houses.get(i).getLocation());
-								logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\tMonthly rent:"+main.Houses.get(i).getMonthlyRent());
-								logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\tServices:"+main.Houses.get(i).getServices());
-								logger.log(Level.INFO,"\t\t\t\t\t\t\t\t\tTenant:"+main.Houses.get(i).getTenant());}
-							
-							}
+						for (int i = 0; i < main.Houses.size(); i++) {
+						    if (main.Houses.get(i).getTenant() != null && main.Houses.get(i).getOwner().equals(name)) {
+						        logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\tId: %s " , main.Houses.get(i).getId());
+						        logger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\tLocation: %s", main.Houses.get(i).getLocation()));
+						        logger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\tMonthly rent: %s", main.Houses.get(i).getMonthlyRent()));
+						        logger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\tServices: %s", main.Houses.get(i).getServices()));
+						        logger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\tTenant: %s", main.Houses.get(i).getTenant()));
+						    }
+						}
+
 					} 
 					else if(x==0) {
 						logged=0;
@@ -345,15 +345,15 @@ public class MainFunc {
 					x = input.nextInt();
 					
 					if(x==1) {
-						for(int i=0;i<main.Houses.size();i++) {
-						if(main.Houses.get(i).getTenant()!=null)
-						{
-							logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\tId: "+main.Houses.get(i).getId());
-							logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\tLocation: " +main.Houses.get(i).getLocation());
-							logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\tMonthly rent: "+main.Houses.get(i).getMonthlyRent());
-							logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\tServices: " +main.Houses.get(i).getServices());
-							logger.log(Level.INFO, "\t\t\t\t\t\t\t\t\tTenant: " +main.Houses.get(i).getTenant());
-						}}
+						 for (int i = 0; i < main.Houses.size(); i++) {
+						        if (main.Houses.get(i).getTenant() != null) {
+						            logger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\tId: %s " , main.Houses.get(i).getId()));
+						            logger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\tLocation: %s", main.Houses.get(i).getLocation()));
+						            logger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\tMonthly rent: %s", main.Houses.get(i).getMonthlyRent()));
+						            logger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\tServices: %s", main.Houses.get(i).getServices()));
+						            logger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\tTenant: %s", main.Houses.get(i).getTenant()));
+						        }
+						    }
 					}
 
 					else if (x==2) {
@@ -365,7 +365,7 @@ public class MainFunc {
 					
 
 						if (!House.isExistHouse(Id, House.Waitinghouses)) {
-							logger.log(Level.SEVERE, () ->"\t\t\t\t\t\t\t\t\t No house with this id");
+							logger.log(Level.SEVERE, () -> dup);
 						logger.log(Level.SEVERE, () ->"\n");
 						logger.log(Level.SEVERE, () ->"\n");
 					} else {

@@ -106,8 +106,8 @@ public class House {
 	public String getPaidTime() {
 		return paidTime;
 	}
-	public void setPaidTime(String Paid) {
-		this.paidTime=Paid;
+	public void setPaidTime(String paid) {
+		this.paidTime=paid;
 	}
 
 	public boolean isAvailable()
@@ -211,10 +211,10 @@ public class House {
             if (house.getId().equalsIgnoreCase(houseId)) {
                 found = true;
               
-             
+                String  ID ="\t\t\t\t\t\t\t\t\t ID :"+house.getId();
                 loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t House Attributes for ID:  " +houseId );
               
-                loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t ID: " + house.getId());
+                loger.log(Level.SEVERE, () -> ID );
                 loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t Location: " + house.getLocation());
                 loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t Services: " + house.getServices());
                 loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t Monthly Rent: " + house.getMonthlyRent());

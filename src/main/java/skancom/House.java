@@ -212,17 +212,17 @@ public class House {
                 found = true;
               
              
-                loger.log(Level.INFO,String.format("\t\t\t\t\t\t\t\t\t House Attributes for ID: %s " ,houseId));
+                loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t House Attributes for ID:  " +houseId );
               
-                loger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\t ID: %s" , house.getId()));
-                loger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\t Location: %s " , house.getLocation()));
-                loger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\t Services: %s " , house.getServices()));
-                loger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\t Monthly Rent: %s " , house.getMonthlyRent()));
-                loger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\t Owner : %s " , house.getOwner()));
-                loger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\t photo : %s " , house.getPhoto()));
-                loger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\t number of floors : %s " , house.getnumfloors()));
-                loger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\t number of bedrooms : %s " , house.getnumbedrooms()));
-                loger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\t number of bathrooms : %s " , house.getnumbathrooms()));
+                loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t ID: " + house.getId());
+                loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t Location: " + house.getLocation());
+                loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t Services: " + house.getServices());
+                loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t Monthly Rent: " + house.getMonthlyRent());
+                loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t Owner :  " + house.getOwner());
+                loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t photo :  " + house.getPhoto());
+                loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t number of floors :  " + house.getnumfloors());
+                loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t number of bedrooms :  " + house.getnumbedrooms());
+                loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t number of bathrooms : " + house.getnumbathrooms());
 
 
                 break;
@@ -230,7 +230,7 @@ public class House {
         }
 
         if (!found) {
-            loger.log(Level.WARNING,String.format( "\t\t\t\t\t\t\t\t\t House with ID : %s not found in the waiting list. " , houseId ));
+            loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t House with ID : %s not found in the waiting list. " + houseId );
         }
     }
 	
@@ -243,7 +243,7 @@ public class House {
 	        }
 
 	        Logger logger = Logger.getLogger(House.class.getSimpleName());
-	        logger.log(Level.WARNING, String.format("\t\t\t\t\t\t\t\t\t House with ID :%s is rejected from the waiting list." , houseId ));
+	        logger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t House with ID :%s is rejected from the waiting list." + houseId );
 	    }
 	  
 	  public static void transferHouse(String houseId, List<House> sourceList, List<House> destinationList) {
@@ -260,10 +260,10 @@ public class House {
 		        // Remove the house from the source list and add it to the destination list
 		        sourceList.remove(houseToTransfer);
 		        destinationList.add(houseToTransfer);
-		        loger.log(Level.WARNING, String.format("\t\t\t\t\t\t\t\t\t House with ID :%s transferred successfully." , houseId));
+		        loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t House with ID :%s transferred successfully." + houseId);
 
 		    } else {
-		        loger.log(Level.WARNING, String.format("\t\t\t\t\t\t\t\t\t House with ID :%s not found . " , houseId ));
+		        loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t House with ID :%s not found . " + houseId );
 
 		    }
 		    }
@@ -272,17 +272,17 @@ public class House {
 		public static void printallWaitingList() {
 	        if (Waitinghouses.isEmpty()) {
 	            Logger logger = Logger.getLogger(House.class.getSimpleName());
-	            logger.log(Level.INFO,String.format( "\t\t\t\t\t\t\t\t\t Waiting list is empty."));
+	            logger.log(Level.SEVERE, () ->  "\t\t\t\t\t\t\t\t\t Waiting list is empty.");
 	        } else {
 	            int countNonNull = 0;
 	            for (House house : Waitinghouses) {
 	                if (house != null) {
 	                    countNonNull++;
-	                    loger.log(Level.INFO,String.format("\t\t\t\t\t\t\t\t\t House Attributes :"));
-	                    loger.log(Level.INFO,String.format("\t\t\t\t\t\t\t\t\t ID: %s" , house.getId()));
-		                loger.log(Level.INFO,String.format("\t\t\t\t\t\t\t\t\t Services: %s" , house.getServices()));
-		                loger.log(Level.INFO,String.format("\t\t\t\t\t\t\t\t\t Location: %s" , house.getLocation()));
-		                loger.log(Level.INFO,String.format("\t\t\t\t\t\t\t\t\t Monthly Rent:%s " , house.getMonthlyRent()));
+	                    loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t House Attributes :");
+	                    loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t ID: " + house.getId());
+		                loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t Services: " + house.getServices());
+		                loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t Location: " + house.getLocation());
+		                loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t Monthly Rent: " + house.getMonthlyRent());
 	              
 	                
 	                }
@@ -290,7 +290,7 @@ public class House {
 
 	            if (countNonNull == 0) {
 	                Logger logger = Logger.getLogger(House.class.getSimpleName());
-	                logger.log(Level.INFO,String.format("\t\t\t\t\t\t\t\t\t Waiting list contains only null elements."));
+	                logger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t Waiting list contains only null elements.");
 	            }
 	        }
 	    }
@@ -305,19 +305,19 @@ public class House {
 		        for (House house : houseList) {
 		            if (house != null && house.getOwner().equals(ownerName)) {
 		                foundOwner = true;
-		                loger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\t House Attributes for Owner: %s " , ownerName));
-	                    loger.log(Level.INFO, String.format( "\t\t\t\t\t\t\t\t\t ID: %s" , house.getId()));
+		                loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t House Attributes for Owner: " + ownerName);
+	                    loger.log(Level.SEVERE, () ->  "\t\t\t\t\t\t\t\t\t ID: " + house.getId());
 
-		                loger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\t number of floors:%s " , house.getnumfloors()));
-		                loger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\t number of bathrooms:%s " , house.getnumbathrooms()));
-		                loger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\t number of bedrooms:%s " , house.getnumbedrooms()));
-		                loger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\t number of locations:%s " , house.getLocation()));
+		                loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t number of floors:" + house.getnumfloors());
+		                loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t number of bathrooms: " + house.getnumbathrooms());
+		                loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t number of bedrooms: " + house.getnumbedrooms());
+		                loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t number of locations: " + house.getLocation());
 
 		            }
 		        }
 
 		        if (!foundOwner) {
-		            loger.log(Level.INFO, String.format("\t\t\t\t\t\t\t\t\t No houses found for owner:%s " , ownerName));
+		            loger.log(Level.SEVERE, () -> "\t\t\t\t\t\t\t\t\t No houses found for owner:%s " + ownerName);
 		        }
 		    }
 

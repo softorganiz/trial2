@@ -3,15 +3,15 @@ package skancom;
 import java.util.ArrayList;
 import java.util.List;
 
-public class main{
+public class Main{
 	
-	private main() {
+	private Main() {
 		super();
 	}
 	protected static final List<Person> persons=new ArrayList<>(); 
 	
 	protected static final List<House> Houses=new ArrayList<>();
-	protected static final List<tenant> tenants=new ArrayList<>();
+	protected static final List<Tenant> tenants=new ArrayList<>();
 	protected static final List<Owner>owners=new ArrayList<>();
 	protected static final List<Furniture>furnit=new ArrayList<>();
 	
@@ -49,7 +49,7 @@ public static void setHouse() {
 public static void setTenant() {
 	
 	
-	tenant tenant11=new tenant("muna","20","Computer Engineering","phone: 0598184653");
+	Tenant tenant11=new Tenant("muna","20","Computer Engineering","phone: 0598184653");
 	tenants.add(tenant11);
 }
 public static void setOwner() {

@@ -1,8 +1,6 @@
 package acceptance;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +9,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import skancom.House;
 
-public class allReservationTest {
+public class allReservation {
 	House h1,h2;
 	boolean actual;
 	boolean expected;
@@ -53,8 +51,8 @@ public class allReservationTest {
 	}
 	@Then("display nothing")
 	public void displayNothing() {
-	    // Write code here that turns the phrase above into concrete actions
-	    assertTrue(count==1);
+	    // Write code here that turns the phrase above into concrete actionsssss
+	    assertEquals(count,1);
 	}
 
 

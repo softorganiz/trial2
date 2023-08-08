@@ -5,16 +5,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Test;
-
-
 import skancom.Person;
-import skancom.Admin;
 import skancom.House;
 import skancom.tenant;
 public class TenantHousing {
@@ -27,7 +23,11 @@ public class TenantHousing {
 	@Before
 	public void createOutputFile() {
 		user= new Person();
+		
 		t1=new tenant();
+		t1.setMajor("computer Engineer");
+		t1.setAge("20");
+		t1.setContactInfo("0598184657");
 		t1.setName("muna");
 		House h1=new House("photo","location","services","monthly rent","owner","paid time");
 		houses.add(h1);
@@ -49,7 +49,7 @@ public class TenantHousing {
 
 	@When("the tenant with name {string} enter {string}")
 	public void theTenantWithNameEnter(String name, String id) {
-	    // Write code here that turns the phrase above into concrete actions
+	    // Write code here that turns the phrase above into concrete actionssssssdtss
 	  
 		for(int i=0;i<houses.size();i++)
 		{
@@ -64,7 +64,7 @@ public class TenantHousing {
 	public void houseBookedSuccessfully() {
 	    // Write code here that turns the phrase above into concrete actions
 	  expected=true;
-	  assertTrue(expected==true);
+	  assertEquals(expected,true);
 	
 	}
 

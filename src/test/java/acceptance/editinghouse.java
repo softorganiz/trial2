@@ -3,8 +3,6 @@ import skancom.House;
 import skancom.Owner;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +12,6 @@ import io.cucumber.java.en.*;
 public class editinghouse {
 	
 	private House newHouse;
-    private boolean isHouseUpdated;
     String houseid,photo,newP,newL,newS,newM,newC,location,service,rent,contact;
     boolean actual;
    Owner o;
@@ -63,7 +60,7 @@ houseid=houseId;
     			photo=houses.get(i).getPhoto();
     		}
     	}
-    	assertTrue(photo.equals(newP));
+    	assertEquals(photo,newP);
      
     }
 
@@ -92,7 +89,7 @@ houseid=houseId;
     			location=houses.get(i).getLocation();
     		}
     	}
-    	assertTrue(location.equals(newL));
+    	assertEquals(location,newL);
       
     }
 
@@ -123,7 +120,7 @@ houseid=houseId;
     			service=houses.get(i).getServices();
     		}
     	}
-    	assertTrue(service.equals(newS)); 
+    	assertEquals(service,newS); 
     }
 
     @Given("The owner wants to update the monthly rent of a house")
@@ -152,7 +149,7 @@ houseid=houseId;
     			rent=houses.get(i).getMonthlyRent();
     		}
     	}
-    	assertTrue(rent.equals(newM)); 
+    	assertEquals(rent,newM); 
         
     }
 
@@ -196,8 +193,9 @@ houseid=houseId;
 
     @Then("The system displays an error message {string}")
     public void the_system_displays_an_error_message(String string) {
-        // Write code here that turns the phrase above into concrete actions
-      assertTrue(actual==false);
+        // Write code here that turns the phrase above into concrete actionsssssss
+     
+      assertEquals(actual,false);
     }
 
 }

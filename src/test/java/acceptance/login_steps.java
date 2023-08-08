@@ -10,9 +10,6 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
-import org.junit.Test;
-
-
 import skancom.Person;
 import skancom.Admin;
 public class login_steps {
@@ -27,11 +24,11 @@ public class login_steps {
 	@Before
 	public void createOutputFile() {
 		user = new Person();
-		Person adm1 = new Person("admin", "IamAdmin", "admin");
-		adm1.setType("admin");
+		Person admin = new Person("admin", "IamAdmin", "admin");
+		admin.setType("admin");
 
-		Admin admin = new Admin(adm1);
-		admin.isStatus();
+		Admin admin1 = new Admin(admin);
+		admin1.isStatus();
 		
 		Person tenant1 = new Person("sema", "sema123", "owner");
 		tenant1.setType("owner");
@@ -42,7 +39,7 @@ public class login_steps {
 		if (!Person.isExist("admin", persons) && !Person.isExist("sema", persons) && !Person.isExist("muna", persons)) {
 			persons.add(owner1);
 			persons.add(tenant1);
-			persons.add(adm1);
+			persons.add(admin);
 
 		}
 
@@ -50,7 +47,7 @@ public class login_steps {
 
 	@Given("that user is not logged in")
 	public void that_user_is_not_logged_in() {
-		// Write code here that turns the phrase above into concrete actions
+		// Write code here that turns the phrase above into concrete actionsssss
 		user.setLogged(0);/*flag*/
 		user.getLogged();
 

@@ -1,21 +1,17 @@
 package acceptance;
 
-import static org.junit.Assert.assertTrue;
-
+import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import skancom.House;
 import skancom.Owner;
-import skancom.main;
 import skancom.tenant;
 
-public class afterBookTest {
+public class afterBook {
 	List <House> houses=new ArrayList<House>();
 	List <tenant> tenants=new ArrayList<tenant>();
 	List <Owner> owners=new ArrayList<Owner>();
@@ -56,20 +52,21 @@ public class afterBookTest {
 	}
 	@When("tenant booked a house")
 	public void tenantBookedAHouse() {
-	    // Write code here that turns the phrase above into concrete actions
+	    // Write code here that turns the phrase above into concrete actionsssssss
+		//s
 	   h1.setTenant("muna");
 	  
 	}
 	@Then("display house info and owner contact info")
 	public void displayHouseInfoAndOwnerContactInfo() {
 	    // Write code here that turns the phrase above into concrete actions
-	   assertTrue(type.equals("tenant"));
-	   assertTrue(name.equals("muna"));
-	   assertTrue(age.equals("26"));
-	   assertTrue(major.equals("nurse"));
-	   assertTrue(paidTime.equals("6thSep"));
-	   assertTrue(owner.equals("sema"));
-	   assertTrue(contact.equals("0592381344"));
+	   assertEquals(type,"tenant");
+	   assertEquals(name,"muna");
+	   assertEquals(age,"26");
+	   assertEquals(major,"nurse");
+	   assertEquals(paidTime,"6thSep");
+	   assertEquals(owner,"sema");
+	   assertEquals(contact,"0592381344");
 	}
 
 

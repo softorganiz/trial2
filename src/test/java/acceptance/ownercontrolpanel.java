@@ -1,7 +1,6 @@
 package acceptance;
 
-import static org.junit.Assert.assertTrue;
-
+import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,7 +45,7 @@ public class ownercontrolpanel {
 	    // Write code here that turns the phrase above into concrete actions
 	   name=o.getName();
 	  owner= h1.getOwner();
-	  assertTrue(owner.equals(name));
+	  assertEquals(owner,name);
 	}
 
 
@@ -59,31 +58,31 @@ public class ownercontrolpanel {
 	    bedrooms=unpuphouses.get(0).getnumbedrooms();
 	    location=unpuphouses.get(0).getLocation();
 	    rent=unpuphouses.get(0).getMonthlyRent();
-	    assertTrue(id.equals("1"));
-	    assertTrue(floors.equals("2"));
-	    assertTrue(bathrooms.equals("3"));
-	    assertTrue(bedrooms.equals("2"));
-	    assertTrue(location.equals("najah street"));
-	    assertTrue(rent.equals("1000$"));
+	    assertEquals(id,"1");
+	    assertEquals(floors,"2");
+	    assertEquals(bathrooms,"3");
+	    assertEquals(bedrooms,"2");
+	    assertEquals(location,"najah street");
+	    assertEquals(rent,"1000$");
 	    
 	}
 
 	
 	@Then("show all puplished houses")
 	public void show_all_puplished_houses() {
-	    // Write code here that turns the phrase above into concrete actions
+	    // Write code here that turns the phrase above into concrete actionsssss
 		 id=puphouses.get(0).getId();
 		    floors=puphouses.get(0).getnumfloors();
 		    bathrooms=puphouses.get(0).getnumbathrooms();
 		    bedrooms=puphouses.get(0).getnumbedrooms();
 		    location=puphouses.get(0).getLocation();
 		    rent=puphouses.get(0).getMonthlyRent();
-		    assertTrue(id.equals("1"));
-		    assertTrue(floors.equals("1"));
-		    assertTrue(bathrooms.equals("2"));
-		    assertTrue(bedrooms.equals("1"));
-		    assertTrue(location.equals("quds street"));
-		    assertTrue(rent.equals("900$"));
+		    assertEquals(id,"1");
+		    assertEquals(floors,"1");
+		    assertEquals(bathrooms,"2");
+		    assertEquals(bedrooms,"1");
+		    assertEquals(location,"quds street");
+		    assertEquals(rent,"900$");
 	   
 	}
 

@@ -1,5 +1,7 @@
 package acceptance;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
@@ -14,7 +16,7 @@ import skancom.Person;
 import skancom.main;
 import skancom.tenant;
 
-public class ownerResTest {
+public class ownerRes {
 	House h1;
 	tenant t;
 	String id,location,services,monthlyRent,tenannt,contactInfo;
@@ -55,12 +57,12 @@ List <tenant> tenants=new ArrayList<tenant>();
 	@Then("display  nothing")
 	public void displayNothing() {
 	    // Write code here that turns the phrase above into concrete actions
-	  assertTrue(id==null);
-	  assertTrue(location==null);
-	  assertTrue(monthlyRent==null);
-	  assertTrue(services==null);
-	  assertTrue(tenannt==null);
-	  assertTrue(contactInfo==null);
+	  assertNull(id);
+	  assertNull(location);
+	  assertNull(monthlyRent);
+	  assertNull(services);
+	  assertNull(tenannt);
+	  assertNull(contactInfo);
 	  
 	}
 
@@ -84,13 +86,14 @@ List <tenant> tenants=new ArrayList<tenant>();
 	}
 	@Then("display the owner housing reservation information")
 	public void displayTheOwnerHousingReservationInformation() {
-	    // Write code here that turns the phrase above into concrete actions
-	   assertTrue(id.equals("1"));
-	   assertTrue(location.equals("university street"));
-	   assertTrue(services.equals("water"));
-	   assertTrue(monthlyRent.equals("1500$"));
-	   assertTrue(tenannt.equals("muna"));
-	   assertTrue(contactInfo.equals("0598184562"));
+	    // Write code here that turns the phrase above into concrete actionssssss
+		//s
+	   assertEquals(id,"1");
+	   assertEquals(location,"university street");
+	   assertEquals(services,"water");
+	   assertEquals(monthlyRent,"1500$");
+	   assertEquals(tenannt,"muna");
+	   assertEquals(contactInfo,"0598184562");
 	}
 
 

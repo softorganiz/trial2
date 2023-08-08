@@ -1,13 +1,12 @@
 package acceptance;
-import static org.junit.Assert.assertTrue;
-
+import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
-
+//import io.cucumber.core.logging.Logger;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
+import skancom.Admin;
 import skancom.House;
-import skancom.main;
 
 public class adminacceptance {
 	List <House> puphouses=new ArrayList < House>();
@@ -15,9 +14,12 @@ public class adminacceptance {
 boolean actual;
 House h1,h2,h3;
 String id;
+Admin a;
+
 	
 	@Before
 	public void createOutputFile() {
+		a=new Admin();
 		
 		h1=new House("photo","quds street","water","900$","sema","6thSep");
 		h1.setTenant("muna");
@@ -34,7 +36,7 @@ String id;
 	
 	@Given("want to show waiting requests")
 	public void want_to_show_waiting_requests() {
-	    // Write code here that turns the phrase above into concrete actions
+	    // Write code here that turns the phrase above into concrete actionsssssss
 	    
 	}
 
@@ -65,6 +67,7 @@ String id;
 	@Then("the house request is deleted from the waiting list")
 	public void the_house_request_is_deleted_from_the_waiting_list() {
 	    // Write code here that turns the phrase above into concrete actions
+		House.deleteHouseFromWaitingList(id);
 	  for(int i=0;i<unpuphouses.size();i++)
 	  {
 		  if(unpuphouses.get(i).getId()==id)
@@ -72,7 +75,7 @@ String id;
 		  else
 			  actual=false;
 	  }
-	  assertTrue(actual==false);
+	  assertEquals(actual,false);
 	}
 
 	@When("enter  unvalid id {string} house")
@@ -90,7 +93,81 @@ String id;
 	@Then("give him a message that it is a false house id")
 	public void give_him_a_message_that_it_is_a_false_house_id() {
 	    // Write code here that turns the phrase above into concrete actions
-	    assertTrue(actual==true);
+	    assertEquals(actual,true);
 	}
+	
+//	@BeforeClass
+//    public void setUp() {
+//        System.setOut(new PrintStream(outputStream));
+//    }
+//
+//    @Given("the waiting list of houses is empty.")
+//    public void testPrintAllWaitingList_EmptyList() {
+//        List<House> waitingHouses = new ArrayList<>();
+//        House.setWaitingHouses(waitingHouses);
+//    }
+//    @When("the printallWaitingList\\() method is called.")
+//    public void thePrintWaitingListMethodIsCalled() {
+//        House.printallWaitingList();
+//    }
+//    @Then("the method should log the message {string}.")
+//    public void theMethodSouldLogTheMessage(String string){
+//        String expectedOutput = "\t\t\t\t\t\t\t\t\t Waiting list is empty.";
+//       assertEquals(expectedOutput, outputStream.toString().trim());
+//
+//        // Reset the output stream
+//        outputStream.reset();
+//    
+//    }
+//
+//    @Test
+//    public void testPrintAllWaitingList_WithHouses() {
+//        List<House> waitingHouses = new ArrayList<>();
+//        waitingHouses.add(new House("photo", "Location X", "Service A", "1000","sema","3th august"));
+//        waitingHouses.add(new House("photo2", "Location Y", "Service B", "2000","sema","4th august"));
+//        House.setWaitingHouses(waitingHouses);
+//    
+//    
+//        House.printallWaitingList();
+//
+//        String expectedOutput = "\t\t\t\t\t\t\t\t\t House Attributes :\n" +
+//                                "\t\t\t\t\t\t\t\t\t ID: 1\n" +
+//                                "\t\t\t\t\t\t\t\t\t Services: Service A\n" +
+//                                "\t\t\t\t\t\t\t\t\t Location: Location X\n" +
+//                                "\t\t\t\t\t\t\t\t\t Monthly Rent: 1000\n" +
+//                                "\t\t\t\t\t\t\t\t\t House Attributes :\n" +
+//                                "\t\t\t\t\t\t\t\t\t ID: 2\n" +
+//                                "\t\t\t\t\t\t\t\t\t Services: Service B\n" +
+//                                "\t\t\t\t\t\t\t\t\t Location: Location Y\n" +
+//                                "\t\t\t\t\t\t\t\t\t Monthly Rent: 2000";
+//      assertEquals(expectedOutput, outputStream.toString().trim());
+//
+//        // Reset the output stream
+//        outputStream.reset();
+//    }
+//
+//    @Test
+//    public void testPrintAllWaitingList_OnlyNullElements() {
+//        List<House> waitingHouses = new ArrayList<>();
+//        waitingHouses.add(null);
+//        waitingHouses.add(null);
+//        waitingHouses.add(null);
+//        House.setWaitingHouses(waitingHouses);
+//
+//        House.printallWaitingList();
+//
+//        String expectedOutput = "Waiting list contains only null elements.";
+//      assertEquals(expectedOutput, outputStream.toString().trim());
+//
+//        // Reset the output stream
+//        outputStream.reset();
+//    }
+//
+//    // Add other test cases as needed
+//
+//    @AfterClass
+//    public void tearDown() {
+//        System.setOut(originalOut);
+//    }
 
 }

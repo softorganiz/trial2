@@ -1,8 +1,6 @@
 package acceptance;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +8,6 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import skancom.Admin;
 import skancom.Person;
 import skancom.tenant;
 import skancom.House;
@@ -52,7 +49,7 @@ public class TestHouse {
 	}
 	@When("the owner  enter {string} to show available housing")
 	public void theOwnerEnterToShowAvailableHousing(String string) {
-	    // Write code here that turns the phrase above into concrete actions
+	    // Write code here that turns the phrase above into concrete actionsssss
 	 for(int i=0;i<Houses.size();i++)
 	 {
 		 if(Houses.get(i).getTenant()==null)
@@ -67,14 +64,14 @@ public class TestHouse {
 	@Then("show the available housing")
 	public void showTheAvailableHousing() {
 	    // Write code here that turns the phrase above into concrete actions
-	   assertTrue(status.equals("tenant"));
+	   assertEquals(status,"tenant");
     //   assertEquals(obj,new House("photo2","haifa street","service2s","3000$","sema","20th August"));
-      assertTrue( obj.getLocation().equals(obj.getLocation()));
-      assertTrue( obj.getPhoto().equals(obj.getPhoto())); 
-      assertTrue( obj.getServices().equals(obj.getServices()));
-      assertTrue( obj.getMonthlyRent().equals(obj.getMonthlyRent()));
-      assertTrue( obj.getOwner().equals(obj.getOwner()));
-      assertTrue( obj.getPaidTime().equals(obj.getPaidTime()));
+      assertEquals( obj.getLocation(),obj.getLocation());
+      assertEquals( obj.getPhoto(),obj.getPhoto()); 
+      assertEquals( obj.getServices(),obj.getServices());
+      assertEquals( obj.getMonthlyRent(),obj.getMonthlyRent());
+      assertEquals( obj.getOwner(),obj.getOwner());
+      assertEquals( obj.getPaidTime(),obj.getPaidTime());
 	}
 
 

@@ -1,7 +1,6 @@
 package acceptance;
 
-import static org.junit.Assert.assertTrue;
-
+import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,10 +9,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import skancom.Furniture;
-import skancom.House;
 import skancom.tenant;
 
-public class furnitureTest {
+public class furniture {
 	List <Furniture> furs=new ArrayList<Furniture>();
 	tenant t;
 	Furniture f;
@@ -41,10 +39,13 @@ public class furnitureTest {
 	}
 	@Then("offer furniture  for sell")
 	public void offerFurnitureForSell() {
-	    // Write code here that turns the phrase above into concrete actions
-	   assertTrue(desc.equals("dining table"));
-	   assertTrue(price.equals("100$"));
-	   assertTrue(tenant.equals("muna"));
+	    // Write code here that turns the phrase above into concrete actionssssss
+	  
+	   assertEquals(desc,"dining table");
+	  
+	   assertEquals(price,"100$");
+	  
+	   assertEquals(tenant,"muna");
 	}
 
 

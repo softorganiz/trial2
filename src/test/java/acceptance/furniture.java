@@ -41,11 +41,11 @@ public class furniture {
 	public void offerFurnitureForSell() {
 	    // Write code here that turns the phrase above into concrete actionssssss
 	  
-	   assertEquals(desc,"dining table");
+	   assertEquals("dining table",desc);
 	  
-	   assertEquals(price,"100$");
+	   assertEquals("100$",price);
 	  
-	   assertEquals(tenant,"muna");
+	   assertEquals("muna",tenant);
 	}
 
 

@@ -110,7 +110,7 @@ public class login_steps {
 	    // Write code here that turns the phrase above into concrete actions
 	    user.setLogged(1);
 	    expected=true;
-	    assertEquals(actual,expected);
+	    assertEquals(expected,actual);
 	}
 	
 

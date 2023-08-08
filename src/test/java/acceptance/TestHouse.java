@@ -64,7 +64,7 @@ public class TestHouse {
 	@Then("show the available housing")
 	public void showTheAvailableHousing() {
 	    // Write code here that turns the phrase above into concrete actions
-	   assertEquals(status,"tenant");
+	   assertEquals("tenant",status);
     //   assertEquals(obj,new House("photo2","haifa street","service2s","3000$","sema","20th August"));
       assertEquals( obj.getLocation(),obj.getLocation());
       assertEquals( obj.getPhoto(),obj.getPhoto()); 

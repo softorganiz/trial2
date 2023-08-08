@@ -75,7 +75,7 @@ Admin a;
 		  else
 			  actual=false;
 	  }
-	  assertEquals(actual,false);
+	  assertEquals(false,actual);
 	}
 
 	@When("enter  unvalid id {string} house")
@@ -93,7 +93,7 @@ Admin a;
 	@Then("give him a message that it is a false house id")
 	public void give_him_a_message_that_it_is_a_false_house_id() {
 	    // Write code here that turns the phrase above into concrete actions
-	    assertEquals(actual,true);
+	    assertEquals(true,actual);
 	}
 	
 //	@BeforeClass

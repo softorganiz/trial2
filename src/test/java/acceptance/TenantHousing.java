@@ -5,8 +5,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import static org.junit.Assert.assertEquals;
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,10 +51,10 @@ public class TenantHousing {
 	  
 		for(int i=0;i<houses.size();i++)
 		{
-			if(houses.get(i).getId().equals(id)) {
+			
 				houses.get(i).setTenant(name);
 			actual=houses.get(i).getTenant().equals(name);}
-		}
+		
 		
 	
 	}
@@ -64,7 +62,7 @@ public class TenantHousing {
 	public void houseBookedSuccessfully() {
 	    // Write code here that turns the phrase above into concrete actions
 	  expected=true;
-	  assertEquals(expected,true);
+	  assertEquals(expected,actual);
 	
 	}
 

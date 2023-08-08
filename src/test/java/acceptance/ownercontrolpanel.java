@@ -58,12 +58,12 @@ public class ownercontrolpanel {
 	    bedrooms=unpuphouses.get(0).getnumbedrooms();
 	    location=unpuphouses.get(0).getLocation();
 	    rent=unpuphouses.get(0).getMonthlyRent();
-	    assertEquals(id,"1");
-	    assertEquals(floors,"2");
-	    assertEquals(bathrooms,"3");
-	    assertEquals(bedrooms,"2");
-	    assertEquals(location,"najah street");
-	    assertEquals(rent,"1000$");
+	    assertEquals("1",id);
+	    assertEquals("2",floors);
+	    assertEquals("3",bathrooms);
+	    assertEquals("2",bedrooms);
+	    assertEquals("najah street",location);
+	    assertEquals("1000$",rent);
 	    
 	}
 
@@ -77,12 +77,12 @@ public class ownercontrolpanel {
 		    bedrooms=puphouses.get(0).getnumbedrooms();
 		    location=puphouses.get(0).getLocation();
 		    rent=puphouses.get(0).getMonthlyRent();
-		    assertEquals(id,"1");
-		    assertEquals(floors,"1");
-		    assertEquals(bathrooms,"2");
-		    assertEquals(bedrooms,"1");
-		    assertEquals(location,"quds street");
-		    assertEquals(rent,"900$");
+		    assertEquals("1",id);
+		    assertEquals("1",floors);
+		    assertEquals("2",bathrooms);
+		    assertEquals("1",bedrooms);
+		    assertEquals("quds street",location);
+		    assertEquals("900$",rent);
 	   
 	}
 

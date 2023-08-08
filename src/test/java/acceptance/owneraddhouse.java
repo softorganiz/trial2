@@ -42,7 +42,7 @@ public class owneraddhouse {
 
     @Given("The owner wants to add multiple houses to the waiting list.")
     public void the_owner_wants_to_add_multiple_houses_to_the_waiting_list() {
-        // No specific action needed in this step as it's just a description.
+        // No specific action needed in this step as it's just a descriptionssss.
     	waitingList = new ArrayList <House >();
     }
 

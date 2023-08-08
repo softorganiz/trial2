@@ -52,7 +52,7 @@ public class allReservation {
 	@Then("display nothing")
 	public void displayNothing() {
 	    // Write code here that turns the phrase above into concrete actionsssss
-	    assertEquals(count,1);
+	    assertEquals(1,count);
 	}
 
 

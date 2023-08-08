@@ -60,13 +60,13 @@ public class afterBook {
 	@Then("display house info and owner contact info")
 	public void displayHouseInfoAndOwnerContactInfo() {
 	    // Write code here that turns the phrase above into concrete actions
-	   assertEquals(type,"tenant");
-	   assertEquals(name,"muna");
-	   assertEquals(age,"26");
-	   assertEquals(major,"nurse");
-	   assertEquals(paidTime,"6thSep");
-	   assertEquals(owner,"sema");
-	   assertEquals(contact,"0592381344");
+	   assertEquals("tenant",type);
+	   assertEquals("muna",name);
+	   assertEquals("26",age);
+	   assertEquals("nurse",major);
+	   assertEquals("6thSep",paidTime);
+	   assertEquals("sema",owner);
+	   assertEquals("0592381344",contact);
 	}
 
 

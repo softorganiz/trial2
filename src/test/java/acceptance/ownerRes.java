@@ -82,12 +82,12 @@ List <tenant> tenants=new ArrayList<tenant>();
 	public void displayTheOwnerHousingReservationInformation() {
 	    // Write code here that turns the phrase above into concrete actionssssss
 		//s
-	   assertEquals(id,"1");
-	   assertEquals(location,"university street");
-	   assertEquals(services,"water");
-	   assertEquals(monthlyRent,"1500$");
-	   assertEquals(tenannt,"muna");
-	   assertEquals(contactInfo,"0598184562");
+	   assertEquals("1",id);
+	   assertEquals("university street",location);
+	   assertEquals("water",services);
+	   assertEquals("1500$",monthlyRent);
+	   assertEquals("muna",tenannt);
+	   assertEquals("0598184562",contactInfo);
 	}
 
 

@@ -16,12 +16,7 @@ public class main{
 	protected static final List<Furniture>furnit=new ArrayList<>();
 	
 	
-	public static void main(String[] args) {
-       
-        setPersons();
-        setHouse();
-        setTenant();
-        setOwner();}
+	
 
 	public static void setPersons() {
 		

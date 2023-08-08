@@ -1,6 +1,4 @@
 package skancom;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Owner extends Person { 
 	
@@ -23,10 +21,7 @@ public Owner() {
 	public House getOwnedHouse() {
 		return ownedHouse;
 	}
-	public void addHouse(House h)
-	{
-		
-	}
+	
 
 
 	public void setOwneHouse(House owneHouse) {

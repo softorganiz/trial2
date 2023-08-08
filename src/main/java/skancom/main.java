@@ -2,13 +2,17 @@ package skancom;
 
 import java.util.ArrayList;
 import java.util.List;
-public class main {
-	protected static final List<Person> persons=new ArrayList<Person>(); 
+public class main{
 	
-	protected static final List<House> Houses=new ArrayList<House>();
-	protected static final List<tenant> tenants=new ArrayList<tenant>();
-	protected static final List<Owner>owners=new ArrayList<Owner>();
-	protected static final List<Furniture>furnit=new ArrayList<Furniture>();
+	private main() {
+		super();
+	}
+	protected static final List<Person> persons=new ArrayList<>(); 
+	
+	protected static final List<House> Houses=new ArrayList<>();
+	protected static final List<tenant> tenants=new ArrayList<>();
+	protected static final List<Owner>owners=new ArrayList<>();
+	protected static final List<Furniture>furnit=new ArrayList<>();
 	public static void setPersons() {
 		
     Person admin=new Person("admin","Iamadmin","admin");
@@ -34,7 +38,7 @@ public static void setHouse() {
 		House h3=new House("photo3","fisal street","services2","2000$","ahmad","10th Septemper");
 		Houses.add(h1);
 		Houses.add(h2);
-		
+	    House.Waitinghouses.add(h3);
 	
 }
 public static void setTenant() {

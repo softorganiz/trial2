@@ -2,7 +2,7 @@ package skancom;
 
 
 import java.util.List;
-import skancom.Person;
+
 
 public class Admin extends Person {
 	

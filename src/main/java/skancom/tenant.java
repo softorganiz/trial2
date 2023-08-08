@@ -1,6 +1,4 @@
 package skancom;
-
-import skancom.Person;
 public class tenant extends Person{
 	private String age;
 	private String major;
